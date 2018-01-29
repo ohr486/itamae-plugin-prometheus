@@ -1,5 +1,7 @@
 # Itamae::Plugin::Recipe::Prometheus
 
+[![wercker status](https://app.wercker.com/status/94c3dcbb718fab8480d75172cba4f9de/s/master "wercker status")](https://app.wercker.com/project/byKey/94c3dcbb718fab8480d75172cba4f9de)
+
 Itamae plugin to install prometheus
 
 ## Installation
