@@ -1,14 +1,26 @@
-require "bundler/setup"
-require "itamae/plugin/recipe/prometheus"
+require "serverspec"
+require "net/ssh"
+require "tempfile"
 
-RSpec.configure do |config|
-  # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+set :backend, :ssh
 
-  # Disable RSpec exposing methods globally on `Module` and `main`
-  config.disable_monkey_patching!
-
-  config.expect_with :rspec do |c|
-    c.syntax = :expect
-  end
+if ENV["ASK_SUDO_PASSWORD"]
+  set :sudo_password, ask("Enter sudo password: ") { |q| q.echo = false }
+else
+  set :sudo_password, ENV["SUDO_PASSWORD"]
 end
+
+host = ENV["TARGET_HOST"]
+
+`vagrant up #{host}`
+
+config = Tempfile.new("", Dir.tmpdir)
+config.write(`vagrant ssh-config #{host}`)
+config.close
+
+options = Net::SSH::Config.for(host, [config.path])
+
+options[:user] ||= Etc.getlogin
+
+set :host, options[:host_name] || host
+set :ssh_options, options
