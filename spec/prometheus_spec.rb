@@ -10,4 +10,7 @@ end
 # TODO: add here
 
 # systemd
-# TODO: add here
+describe file("/etc/systemd/system/prometheus.service") do
+  it { should be_file }
+  its(:content) { should contain("ExecStart=/usr/local/prometheus/prometheus-2.1.0.linux-amd64/prometheus") }
+end
