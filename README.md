@@ -22,7 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Recipe
+
+```ruby
+# your recipe
+include_recipe "prometheus::default"
+```
+
+### Node
+
+```yaml
+# node.yml
+prometheus:
+  # target prometheus version
+  version: 2.1.0
+```
+
+## Testing
+
+requirements [Vagrant](https://www.vagrantup.com/)
+
+```sh
+bundle exec rake itamae:default
+bundle exec rake spec:default
+```
 
 ## License
 
