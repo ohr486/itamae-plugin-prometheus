@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    itamae-plugin-recipe-prometheus (0.1.0)
+    itamae-plugin-recipe-prometheus (0.0.1)
       itamae (~> 1.2)
 
 GEM
