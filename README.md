@@ -1,5 +1,6 @@
 # Itamae::Plugin::Recipe::Prometheus
 
+[![Gem Version](https://badge.fury.io/rb/itamae-plugin-recipe-prometheus.svg)](https://badge.fury.io/rb/itamae-plugin-recipe-prometheus)
 [![wercker status](https://app.wercker.com/status/94c3dcbb718fab8480d75172cba4f9de/m/master "wercker status")](https://app.wercker.com/project/byKey/94c3dcbb718fab8480d75172cba4f9de)
 
 Itamae plugin to install prometheus
