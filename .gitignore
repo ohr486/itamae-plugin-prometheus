@@ -58,3 +58,6 @@ build-iPhoneSimulator/
 # for editor
 *.swp
 *~
+
+# for mac
+.DS_Store
