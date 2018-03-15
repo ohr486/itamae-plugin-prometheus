@@ -20,7 +20,7 @@ end
 # --- INSTALL ---
 
 execute "# get prometheus tar" do
-  not_if "test -e /usr/local/prometheus/prometheus_#{prometheus_version}-linux-amd64.tgz"
+  not_if "test -e /usr/local/prometheus/prometheus_#{prometheus_version}.linux-amd64.tgz"
   cwd "/usr/local/prometheus"
   command "wget -q https://github.com/prometheus/prometheus/releases/download/v#{prometheus_version}/prometheus-#{prometheus_version}.linux-amd64.tar.gz"
 end
