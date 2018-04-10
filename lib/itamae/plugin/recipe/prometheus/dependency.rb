@@ -1,7 +1,6 @@
 %w(
   wget
   unzip
-  make
 ).each do |pkg|
   package pkg do
     action :install
